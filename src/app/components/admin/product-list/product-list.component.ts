@@ -12,7 +12,7 @@ export class ProductListComponent {
 
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe(
-      (data) => console.log(data),
+      ({products}) => (this.products = products.data),
       (error) => console.log(error)
     );
   }
