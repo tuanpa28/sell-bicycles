@@ -1,1 +1,46 @@
-<p>product-add works!</p>
+<form (ngSubmit)="onHandleSubmit()">
+    <div class="mb-3">
+        <label for="">Tên sản phẩm</label>
+        <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="product.name"
+            name="name"
+        />
+    </div>
+    <div class="mb-3">
+        <label for="">Giá</label>
+        <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="product.price"
+            name="price" 
+        />
+    </div>  
+    <div class="mb-3">
+        <label for="">Ảnh</label>
+        <input
+            type="file"
+            class="form-control"
+            [(ngModel)]="product.image"
+        
+        />
+    </div>
+    <div class="mb-3">
+        <label for="">Mô tả</label>
+        <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="product.description"
+            name="description"
+        />
+    </div>
+    <div class="mb-3">
+        <label for="">Loại sản phẩm</label>
+        <select class="form-control" [(ngModel)]="product.categoryId" name="category">
+            <option value="">Chọn loại sản phẩm</option>
+            <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+        </select>
+    </div>
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Thêm</button>
+</form>
