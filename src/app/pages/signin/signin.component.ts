@@ -24,6 +24,7 @@ export class SigninComponent {
     if (this.formSignin.valid) {
       this.authService.signin(this.formSignin.value).subscribe((data) => {
         localStorage.setItem('accessToken', JSON.stringify(data.accessToken));
+        localStorage.setItem('user', JSON.stringify(data.user));
         this.router.navigate(['/admin']);
         alert('Đăng nhập thành công!');
       });
