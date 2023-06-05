@@ -57,12 +57,12 @@
 
       <li>
         <a href="#" class="block transition hover:text-gray-700">
-          Categories
+          Products
         </a>
       </li>
     </ol>
   </nav>
-  <div class="overflow-x-auto w-[500px]">
+  <div class="overflow-x-auto w-[1000px]">
     <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
       <thead class="ltr:text-left rtl:text-right">
         <tr>
@@ -71,6 +71,19 @@
           </th>
           <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
             Name
+          </th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            Image
+          </th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            price
+          </th>
+
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            description
+          </th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            Category
           </th>
         </tr>
       </thead>
@@ -85,6 +98,18 @@
           </td>
           <td class="whitespace-nowrap px-4 py-2 text-gray-700">
             {{ product.name }}
+          </td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+            {{ product.image }}
+          </td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+            {{ product.price }}
+          </td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+            {{ product.description }}
+          </td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+            {{ product.categoryId }}
           </td>
 
           <td class="whitespace-nowrap px-4 py-2 text-gray-700">
