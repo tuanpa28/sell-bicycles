@@ -1,0 +1,185 @@
+
+
+
+<!-- div2 -->
+
+<div>
+
+  <section class="bg-white">
+      <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="text-6xl font-bold text-gray-900 sm:text-4xl italic text-red-600">
+              Accessories
+          </h2>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- /div2 -->
+
+
+  <!-- div3 -->
+
+
+  <div>
+  <section class="bg-gray-100">
+  <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <div class="relative">
+          <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
+              <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 21L15.5 15.5M15.5 15.5C17.5 13.5 18.6667 11.1667 18.6667 8.66667C18.6667 4.83333 15.1667 1.33333 11.3333 1.33333C7.5 1.33333 4 4.83333 4 8.66667C4 12.5 7.5 16 11.3333 16C13.3333 16 15 15.1667 15.5 13.6667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </span>
+          <input class="w-full py-2 pl-10 placeholder-gray-500 tracking-wide text-gray-800 rounded-lg focus:outline-none focus:shadow-outline border border-gray-200 focus:border-teal-400" type="text" placeholder="Search for products" />
+      </div>
+  </div>
+  </section>
+  </div>
+
+
+  <!-- /div3 -->
+
+
+
+
+  <!-- div4 -->
+  <div>
+
+
+      <section>
+          <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+
+
+            <div class="mt-8">
+              <p class="text-sm text-gray-500">Showing <span> 4 </span> of 40</p>
+            </div>
+
+            <ul class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <li *ngFor = " let pro of products ;index as i">
+                <a href="accessoriesfake2.html" class="group block overflow-hidden">
+                  <img
+                  src="{{pro.image}}"
+                    alt=""
+                    class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                  />
+
+                  <div class="relative bg-white pt-3">
+                      <h1>
+                        {{pro.name}}
+                      </h1>
+                    <h3
+                      class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
+                    >
+                    {{pro.description}}
+                    </h3>
+
+                    <p class="mt-2">
+                      <span class="sr-only"> Regular Price </span>
+
+                      <span class="tracking-wider text-gray-900"> {{pro.price}} </span>
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+            </ul>
+
+            <ol class="mt-8 flex justify-center gap-1 text-xs font-medium">
+              <li>
+                <a
+                  href="#"
+                  class="inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100"
+                >
+                  <span class="sr-only">Prev Page</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-3 w-3"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </li>
+
+
+              <li>
+                <a
+                  href="#"
+                  class="inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100"
+                >
+                  <span class="sr-only">Next Page</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-3 w-3"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ol>
+          </div>
+        </section>
+  </div>
+
+
+  <!-- /div4 -->
+
+
+  <!-- div5 -->
+  <div>
+
+      <div>
+          <section class="overflow-hidden rounded-lg shadow-2xl md:grid md:grid-cols-3">
+            <img
+              alt="Trainer"
+              src="https://res.cloudinary.com/db5szckya/image/upload/v1685620797/anhdiv104_xtwzhk.jpg"
+              class="pl-10 h-32 w-full object-cover md:h-full"
+            />
+
+            <div class="p-4 text-center sm:p-6 md:col-span-2 lg:p-8">
+              <p class="text-sm font-semibold uppercase tracking-widest">
+                Run with the pack
+              </p>
+
+              <h2 class="mt-6 font-black uppercase">
+                <span class="text-4xl font-black sm:text-5xl lg:text-6xl">
+                  Get 20% off
+                </span>
+
+                <span class="mt-2 block text-sm">On your next order over $50</span>
+              </h2>
+
+              <a
+                class="mt-8 inline-block w-full bg-black py-4 text-sm font-bold uppercase tracking-widest text-white"
+                href=""
+              >
+                Get Discount
+              </a>
+
+              <p class="mt-8 text-xs font-medium uppercase text-gray-400">
+                Offer valid until 24th March, 2021 *
+              </p>
+            </div>
+          </section>
+        </div>
+  </div>
+
+  <!-- /div5 -->
+
+
+
+

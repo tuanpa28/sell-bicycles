@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { DashboardPageComponent } from './pages/admin/dashboard-page/dashboard-page.component';
@@ -13,11 +13,18 @@ import { ProductAddComponent } from './pages/admin/product-add/product-add.compo
 import { ProductUpdateComponent } from './pages/admin/product-update/product-update.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { BicyclesComponent } from './pages/bicycles/bicycles.component';
+import { AccessoriesComponent } from './pages/accessories/accessories.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+
 const routes: Routes = [
   {
     path: '',
     component: BaseLayoutComponent,
     children: [
+
       { path: 'signup', component: SignupComponent },
       { path: 'signin', component: SigninComponent },
     ],
@@ -36,11 +43,26 @@ const routes: Routes = [
       { path: 'products/:id/update', component: ProductUpdateComponent },
     ],
   },
+
+  {
+    path: '',
+    component: BaseLayoutComponent,
+    children: [
+      { path: '', redirectTo: 'homepage', pathMatch: 'full' },
+      { path: 'homepage', component: HomepageComponent },
+      { path: 'bicycles', component: BicyclesComponent },
+      { path: 'contact', component: ContactComponent },
+      { path: 'accessories', component: AccessoriesComponent },
+      { path: 'about', component: AboutComponent },
+    ],
+  },
+
   { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports : [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
+
 export class AppRoutingModule {}
