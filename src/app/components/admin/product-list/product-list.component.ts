@@ -12,9 +12,16 @@ export class ProductListComponent {
 
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe(
-      ({products}) => (this.products = products.data),
+      ({ products }) => (this.products = products.data),
       (error) => console.log(error)
     );
+  }
+
+  getProductImageUrl(image: object): string {
+    if (image && typeof image === 'object' && 'url' in image) {
+      return (image as any).url;
+    }
+    return ''; // Default or fallback image URL
   }
 
   onHandleRemove(id: any) {
