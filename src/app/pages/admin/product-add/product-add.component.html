@@ -1,46 +1,108 @@
-<form (ngSubmit)="onHandleSubmit()">
-    <div class="mb-3">
-        <label for="">Tên sản phẩm</label>
-        <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="product.name"
-            name="name"
-        />
-    </div>
-    <div class="mb-3">
-        <label for="">Giá</label>
-        <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="product.price"
-            name="price" 
-        />
-    </div>  
-    <div class="mb-3">
-        <label for="">Ảnh</label>
-        <input
-            type="file"
-            class="form-control"
-            [(ngModel)]="product.image"
-        
-        />
-    </div>
-    <div class="mb-3">
-        <label for="">Mô tả</label>
-        <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="product.description"
-            name="description"
-        />
-    </div>
-    <div class="mb-3">
-        <label for="">Loại sản phẩm</label>
-        <select class="form-control" [(ngModel)]="product.categoryId" name="category">
-            <option value="">Chọn loại sản phẩm</option>
-            <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
-        </select>
-    </div>
-    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Thêm</button>
-</form>
+<div class="mt-12">
+  <div class="text-xl font-semibold mb-3">Thêm danh mục</div>
+
+  <form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
+    <label
+      for="name"
+      class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+    >
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        placeholder="Name"
+        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+      />
+
+      <span
+        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
+      >
+        Name
+      </span>
+    </label>
+    <label
+      for="name"
+      class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+    >
+      <input
+        type="number"
+        id="price"
+        formControlName="price"
+        placeholder="price"
+        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+      />
+
+      <span
+        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
+      >
+        price
+      </span>
+    </label>
+    <label
+      for="name"
+      class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+    >
+      <input
+        type="text"
+        id="description"
+        formControlName="description"
+        placeholder="description"
+        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+      />
+
+      <span
+        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
+      >
+        description
+      </span>
+    </label>
+    <label
+      for="name"
+      class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+    >
+      <input
+        type="file"
+        (change)="onFileSelected($event)"
+        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+      />
+
+      <span
+        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
+      >
+        image
+        <!-- (change)="onFileSelected($event)" -->
+      </span>
+    </label>
+    <label
+      class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+    >
+      <!-- <select *ngFor ="let cate of categories">
+      <option value="">Chọn</option>
+      <option value=" "></option>
+    </select> -->
+    </label>
+    <select
+      formControlName="categoryId"
+      *ngIf="categories && categories.length"
+    >
+      <option *ngFor="let cate of categories" value="{{ cate._id }}">
+        {{ cate.name }}
+      </option>
+    </select>
+    <button
+      type="submit"
+      [disabled]="!productForm.valid"
+      class="group relative inline-block overflow-hidden border border-indigo-600 px-6 py-2 rounded mt-2 focus:outline-none focus:ring"
+    >
+      <span
+        class="absolute inset-y-0 left-0 w-[2px] bg-indigo-600 transition-all group-hover:w-full group-active:bg-indigo-500"
+      ></span>
+
+      <span
+        class="relative text-sm font-medium text-indigo-600 transition-colors group-hover:text-white"
+      >
+        Submit
+      </span>
+    </button>
+  </form>
+</div>
