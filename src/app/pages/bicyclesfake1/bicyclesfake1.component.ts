@@ -3,11 +3,11 @@ import { IProduct } from 'src/app/interfaces/product';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
-  selector: 'app-accessories',
-  templateUrl: './accessories.component.html',
-  styleUrls: ['./accessories.component.scss']
+  selector: 'app-bicyclesfake1',
+  templateUrl: './bicyclesfake1.component.html',
+  styleUrls: ['./bicyclesfake1.component.scss']
 })
-export class AccessoriesComponent {
+export class Bicyclesfake1Component {
   products: IProduct[] = [];
 
   constructor(private productService: ProductService) {
@@ -17,5 +17,3 @@ export class AccessoriesComponent {
     );
   }
 }
-
-

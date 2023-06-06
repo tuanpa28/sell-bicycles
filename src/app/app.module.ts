@@ -23,8 +23,10 @@ import { BicyclesComponent } from './pages/bicycles/bicycles.component';
 import { AccessoriesComponent } from './pages/accessories/accessories.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { Bicyclesfake1Component } from './pages/bicyclesfake1/bicyclesfake1.component';
+import { Accessoriesfake2Component } from './pages/accessoriesfake2/accessoriesfake2.component';
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent, DashboardPageComponent, CategoriesPageComponent, CategoryAddComponent, CategoryUpdateComponent, CategoryListComponent, AdminLayoutComponent, BaseLayoutComponent, SignupComponent, SigninComponent, ProductListComponent, ProductsPageComponent, ProductAddComponent, ProductUpdateComponent,HomepageComponent, BicyclesComponent, AccessoriesComponent, AboutComponent, ContactComponent],
+  declarations: [AppComponent, PageNotFoundComponent, DashboardPageComponent, CategoriesPageComponent, CategoryAddComponent, CategoryUpdateComponent, CategoryListComponent, AdminLayoutComponent, BaseLayoutComponent, SignupComponent, SigninComponent, ProductListComponent, ProductsPageComponent, ProductAddComponent, ProductUpdateComponent,HomepageComponent, BicyclesComponent, AccessoriesComponent, AboutComponent, ContactComponent, Bicyclesfake1Component, Accessoriesfake2Component],
   imports: [
     BrowserModule,
     AppRoutingModule,

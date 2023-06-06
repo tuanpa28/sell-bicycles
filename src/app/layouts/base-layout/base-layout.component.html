@@ -7,43 +7,58 @@
 
 
   <header aria-label="Site Header" class="bg-stone-500">
+
  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
  <div class="flex h-16 items-center justify-between">
  <div class="md:flex md:items-center md:gap-12">
   <a class="block text-teal-600" href="home.html">
     <span class="sr-only">Home</span>
-      <img class="bg-black-600" src="img/logo-1.png" alt="">
+      <img class="bg-black-600" src="https://res.cloudinary.com/db5szckya/image/upload/v1686032892/logo-1_nz4gqi.png" alt="">
   </a>
  </div>
+
 
  <div class="hidden md:block">
   <nav aria-label="Site Nav">
     <ul class="flex items-center gap-6 text-sm">
-      <li>
+      <li >
         <a
-          class="text-white font-bold transition hover:text-black/75 text-xl"
-          routerLink="homepage"
-        >
-        HOME
-        </a>
+        class="text-white font-bold transition hover:text-gray/75 text-xl"
+        routerLink="homepage"
+      >HOME</a>
+    </li>
+
+      <li class="mx-2 relative">
+        <a
+        class="text-white font-bold transition hover:text-gray/75 text-xl"
+        routerLink="bicycles"
+      >BICYCLES</a>
+        <ul class="absolute hidden bg-gray-800 text-white pt-2">
+            <li>
+                <a  routerLink="accessories" class="block px-4 py-2 hover:bg-gray-700">accessories</a>
+            </li>
+            <li>
+                <a  routerLink="contact" class="block px-4 py-2 hover:bg-gray-700">contact</a>
+            </li>
+            <li>
+                <a routerLink="about" class="block px-4 py-2 hover:bg-gray-700">about</a>
+            </li>
+        </ul>
+        <style>
+            .relative:hover .absolute {
+                display: block;
+            }
+        </style>
+
+
       </li>
 
-      <li>
+      <li >
         <a
-          class="text-white font-bold transition hover:text-black/75 text-xl"
-          routerLink="bicycles"
-        >
-        BICYCLES
-        </a>
-      </li>
-
-      <li>
-        <a
-        class="text-white font-bold transition hover:text-black/75 text-xl"
+        class="text-white font-bold transition hover:text-gray/75 text-xl"
         routerLink="accessories"
-      >
-      ACCESSORIES
-      </a>
+      >ACCESSORIES</a>
+
       </li>
 
       <li>
@@ -70,20 +85,6 @@
  </div>
 
  <div class="flex items-center gap-5">
-
-  <div class="sm:flex sm:gap-4">
-    <a
-      class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-      href="/"
-    >
-      Login
-    </a>
-
-
-
-
-
-  </div>
 
 
   <div class="block md:hidden">
@@ -114,24 +115,25 @@
  </div>
 
 
- <main> <router-outlet /> </main>
 
 
 
 
+  <main><router-outlet/></main>
 
 
 
     <!-- div12 -->
 
     <div>
+
        <footer aria-label="Site Footer" class="bg-white">
            <div
              class="  py-16  space-y-8 lg:space-y-16  "
            >
              <div class="sm:flex sm:items-center sm:justify-between bg-stone-500 px-5">
               <div class="">
-               <img class="" src="img/logo-1.png" alt="">
+               <img class="" src="https://res.cloudinary.com/db5szckya/image/upload/v1686032892/logo-1_nz4gqi.png" alt="">
               </div>
 
                <ul class="flex justify-start gap-6 mt-8 sm:mt-0 sm:justify-end ">
@@ -385,6 +387,10 @@
                &copy; Copyright © 2023 Cycle Shop
              </p>
            </div>
+
+
+
+
          </footer>
     </div>
 

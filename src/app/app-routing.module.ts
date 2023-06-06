@@ -15,11 +15,29 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { BicyclesComponent } from './pages/bicycles/bicycles.component';
+import { Bicyclesfake1Component } from './pages/bicyclesfake1/bicyclesfake1.component';
 import { AccessoriesComponent } from './pages/accessories/accessories.component';
+import { Accessoriesfake2Component } from './pages/accessoriesfake2/accessoriesfake2.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: BaseLayoutComponent,
+    children: [
+      { path: '', redirectTo: 'homepage', pathMatch: 'full' },
+      { path: 'homepage', component: HomepageComponent },
+      { path: 'bicycles', component: BicyclesComponent },
+      { path: 'bicyclesfake1', component: Bicyclesfake1Component },
+      { path: 'contact', component: ContactComponent },
+      { path: 'accessories', component: AccessoriesComponent },
+      { path: 'accessoriesfake2', component: Accessoriesfake2Component },
+      { path: 'about', component: AboutComponent },
+    ],
+  },
+
+
   {
     path: '',
     component: BaseLayoutComponent,
@@ -44,18 +62,7 @@ const routes: Routes = [
     ],
   },
 
-  {
-    path: '',
-    component: BaseLayoutComponent,
-    children: [
-      { path: '', redirectTo: 'homepage', pathMatch: 'full' },
-      { path: 'homepage', component: HomepageComponent },
-      { path: 'bicycles', component: BicyclesComponent },
-      { path: 'contact', component: ContactComponent },
-      { path: 'accessories', component: AccessoriesComponent },
-      { path: 'about', component: AboutComponent },
-    ],
-  },
+
 
   { path: '**', component: PageNotFoundComponent },
 ];
