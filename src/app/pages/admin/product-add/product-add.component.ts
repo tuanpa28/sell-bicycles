@@ -58,7 +58,7 @@ export class ProductAddComponent {
 
           this.productService.createProduct(product).subscribe(() => {
             this.router.navigate(['/admin/products']);
-            alert(`Thêm danh mục thành công!`);
+            alert(`Thêm sản phẩm thành công!`);
           });
         });
     }
