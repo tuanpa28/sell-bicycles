@@ -1,137 +1,171 @@
 
  <!-- div1 -->
 
- <div>
-
-
-
-
+ <div class="wrapper">
   <header aria-label="Site Header" class="bg-stone-500">
- <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
- <div class="flex h-16 items-center justify-between">
- <div class="md:flex md:items-center md:gap-12">
-  <a class="block text-teal-600" href="home.html">
-    <span class="sr-only">Home</span>
-      <img class="bg-black-600" src="img/logo-1.png" alt="">
-  </a>
- </div>
+    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="md:flex md:items-center md:gap-12">
+          <a class="block text-teal-600" href="home.html">
+            <span class="sr-only">Home</span>
+            <img class="bg-black-600" src="https://res.cloudinary.com/db5szckya/image/upload/v1686032892/logo-1_nz4gqi.png" alt="">
+          </a>
+        </div>
 
- <div class="hidden md:block">
-  <nav aria-label="Site Nav">
-    <ul class="flex items-center gap-6 text-sm">
-      <li>
-        <a
-          class="text-white font-bold transition hover:text-black/75 text-xl"
-          routerLink="homepage"
-        >
-        HOME
-        </a>
-      </li>
+        <div class="relative">
 
-      <li>
-        <a
-          class="text-white font-bold transition hover:text-black/75 text-xl"
-          routerLink="bicycles"
-        >
-        BICYCLES
-        </a>
-      </li>
+          <a
+            class="rounded-md bg-teal-600 px-5 py-2 text-sm font-medium text-white shadow"
 
-      <li>
-        <a
-        class="text-white font-bold transition hover:text-black/75 text-xl"
-        routerLink="accessories"
-      >
-      ACCESSORIES
-      </a>
-      </li>
+          >
+          MENU
+          </a>
+          <div (click)="handleShow()" class="absolute b-0 l-0 menu">
+            <h4  class="font-bold transition px-3 py-3 text-xl rounded-md shadow ">Danh Mục</h4>
+            <ul *ngIf="isShow" class="text-sm p-2 bg-gray-200 menu2 rounded-md">
+              <li *ngFor="let item of category"><a class="uppercase "  routerLink="bicycles">{{item.name}}</a></li>
 
-      <li>
-        <a
-          class="text-white font-bold transition hover:text-black/75 text-xl"
-          routerLink="about"
-        >
-        ABOUT US
-        </a>
-      </li>
-
-      <li>
-        <a
-          class="text-white font-bold transition hover:text-black/75 text-xl"
-          routerLink="contact"
-        >
-        CONTACT
-        </a>
-      </li>
-
-
-    </ul>
-  </nav>
- </div>
-
- <div class="flex items-center gap-5">
-
-  <div class="sm:flex sm:gap-4">
-    <a
-      class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-      href="/"
-    >
-      Login
-    </a>
+            </ul>
+          </div>
 
 
 
 
+      </div>
 
+        <div class="hidden md:block">
+          <nav aria-label="Site Nav">
+            <ul class="flex items-center gap-6 text-sm">
+              <li>
+                <a
+                  class="text-white font-bold transition hover:text-gray/75 text-xl"
+                  routerLink="homepage"
+                >HOME</a>
+              </li>
+
+              <li >
+                <a class="text-white font-bold transition text-xl " routerLink="bicycles">BICYCLES</a>
+
+
+              <li>
+                <a
+                  class="text-white font-bold transition hover:text-gray/75 text-xl"
+                  routerLink="accessories"
+                >ACCESSORIES</a>
+
+              </li>
+
+
+              <li>
+                <a
+                  class="text-white font-bold transition hover:text-black/75 text-xl"
+                  routerLink="about"
+                >
+                ABOUT US
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="text-white font-bold transition hover:text-black/75 text-xl"
+                  routerLink="contact"
+                >
+                CONTACT
+                </a>
+              </li>
+
+
+
+
+            </ul>
+
+          </nav>
+        </div>
+
+        <div class="flex items-center gap-5">
+
+
+            <div class="sm:flex sm:gap-4">
+              <a
+                class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
+                href="/"
+              >
+                Login
+              </a>
+
+
+        </div>
+
+          <div class="block md:hidden">
+            <button
+              class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script>
+  (function() {
+    var target = document.querySelector('li.relative');
+      target.addEventListener('click', function() {
+      target.classList.toggle('active');
+    });
+  })();
+  </script>
+
+  <style>
+  nav ul.absolute {
+    display: none;
+  }
+
+  nav ul.active {
+    display: block;
+  }
+
+  .relative:hover .absolute {
+    display: block;
+  }
+  </style>
   </div>
 
 
-  <div class="block md:hidden">
-    <button
-      class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M4 6h16M4 12h16M4 18h16"
-        />
-      </svg>
-    </button>
-  </div>
- </div>
- </div>
- </div>
- </header>
-
- </div>
-
-
- <main> <router-outlet /> </main>
+<!-- /div1 -->
 
 
 
 
+  <main><router-outlet/></main>
 
 
 
     <!-- div12 -->
 
     <div>
+
        <footer aria-label="Site Footer" class="bg-white">
            <div
              class="  py-16  space-y-8 lg:space-y-16  "
            >
              <div class="sm:flex sm:items-center sm:justify-between bg-stone-500 px-5">
               <div class="">
-               <img class="" src="img/logo-1.png" alt="">
+               <img class="" src="https://res.cloudinary.com/db5szckya/image/upload/v1686032892/logo-1_nz4gqi.png" alt="">
               </div>
 
                <ul class="flex justify-start gap-6 mt-8 sm:mt-0 sm:justify-end ">
@@ -385,6 +419,10 @@
                &copy; Copyright © 2023 Cycle Shop
              </p>
            </div>
+
+
+
+
          </footer>
     </div>
 

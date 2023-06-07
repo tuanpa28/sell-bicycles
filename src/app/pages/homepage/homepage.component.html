@@ -104,11 +104,11 @@
       <p class="text-sm text-gray-500">Showing <span> 4 </span> of 40</p>
     </div>
 
-    <ul  class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"  *ngIf="products && products.length">
+    <ul  class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" >
       <li *ngFor = " let pro of products ;index as i">
-        <a href="#" class="group block overflow-hidden">
+        <a  [routerLink]="['/bicyclesfake1/',pro._id]" class="group block overflow-hidden">
           <img
-            src="{{pro.image}}"
+            src="{{pro.image.url}}"
             alt=""
             class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
           />
