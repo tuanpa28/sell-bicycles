@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { DashboardPageComponent } from './pages/admin/dashboard-page/dashboard-page.component';
@@ -34,14 +34,6 @@ const routes: Routes = [
       { path: 'accessories', component: AccessoriesComponent },
       { path: 'accessoriesfake2', component: Accessoriesfake2Component },
       { path: 'about', component: AboutComponent },
-    ],
-  },
-
-
-  {
-    path: '',
-    component: BaseLayoutComponent,
-    children: [
 
       { path: 'signup', component: SignupComponent },
       { path: 'signin', component: SigninComponent },
@@ -62,14 +54,11 @@ const routes: Routes = [
     ],
   },
 
-
-
   { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
-  imports : [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-
 export class AppRoutingModule {}
