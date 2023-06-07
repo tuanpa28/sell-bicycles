@@ -15,16 +15,16 @@
         <div class="relative">
 
           <a
-            class="text-white font-bold transition hover:text-black/75 text-xl"
+            class="rounded-md bg-teal-600 px-5 py-2 text-sm font-medium text-white shadow"
 
           >
           MENU
           </a>
           <div (click)="handleShow()" class="absolute b-0 l-0 menu">
-            <h4  class="text-green font-bold transition hover:text-green/75 text-xl bg-black-500">Danh Mục</h4>
-            <ul *ngIf="isShow" class="text-sm p-2 bg-gray-200 menu2">
+            <h4  class="font-bold transition px-3 py-3 text-xl rounded-md shadow ">Danh Mục</h4>
+            <ul *ngIf="isShow" class="text-sm p-2 bg-gray-200 menu2 rounded-md">
               <li *ngFor="let item of category"><a class="uppercase "  routerLink="bicycles">{{item.name}}</a></li>
-             
+
             </ul>
           </div>
 
