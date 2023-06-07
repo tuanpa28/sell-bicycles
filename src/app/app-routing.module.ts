@@ -29,7 +29,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'homepage', pathMatch: 'full' },
       { path: 'homepage', component: HomepageComponent },
       { path: 'bicycles', component: BicyclesComponent },
-      { path: 'bicyclesfake1', component: Bicyclesfake1Component },
+      { path: 'bicyclesfake1/:id', component: Bicyclesfake1Component },
       { path: 'contact', component: ContactComponent },
       { path: 'accessories', component: AccessoriesComponent },
       { path: 'accessoriesfake2', component: Accessoriesfake2Component },

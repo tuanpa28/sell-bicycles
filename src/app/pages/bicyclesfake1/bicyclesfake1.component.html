@@ -27,12 +27,12 @@
 -->
 
 <section>
-    <div class="relative mx-auto max-w-screen-xl px-4 py-8" *ngFor = " let pro of products ;index as i">
+    <div class="relative mx-auto max-w-screen-xl px-4 py-8" >
       <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
-        <div class="grid grid-cols-2 gap-4 md:grid-cols-1">
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-1" >
           <img
             alt="Les Paul"
-            src="{{pro.image}}"
+            src="{{products.image}}"
             class="aspect-square w-full rounded-xl object-cover"
           />
 
@@ -73,10 +73,10 @@
           <div class="mt-8 flex justify-between">
             <div class="max-w-[35ch] space-y-2">
               <h1 class="text-xl font-bold sm:text-2xl">
-                {{pro.name}}
+                {{products.name}}
               </h1>
 
-              <p class="text-sm">  {{pro.description}}</p>
+              <p class="text-sm">  {{products.description}}</p>
 
               <div class="-ms-0.5 flex">
                 <svg
@@ -136,7 +136,7 @@
               </div>
             </div>
 
-            <p class="text-lg font-bold">{{pro.price}}</p>
+            <p class="text-lg font-bold">{{products.price}}</p>
           </div>
 
           <div class="mt-4">

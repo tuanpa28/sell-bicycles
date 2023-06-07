@@ -8,6 +8,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class HomepageComponent {
   products: IProduct[] = [];
+  
 
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe(
