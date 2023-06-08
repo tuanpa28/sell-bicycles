@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from '../interfaces/product';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -19,6 +19,11 @@ export class ProductService {
     return headers;
   }
 
+  searchProducts(queryObject: any): Observable<any> {
+    return this.http.get<IProduct[]>('https://asmbe.vercel.app/api/products', {
+      params: queryObject,
+    });
+  }
   getProducts(): Observable<any> {
     return this.http.get<IProduct[]>('https://asmbe.vercel.app/api/products');
   }
