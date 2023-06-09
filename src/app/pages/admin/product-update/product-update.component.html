@@ -1,108 +1,69 @@
-<div class="mt-12">
-  <div class="text-xl font-semibold mb-3">Update sản phẩm</div>
-
+<div class="max-w-lg mx-auto bg-white rounded p-6">
+  <h1 class="text-2xl font-bold mb-4">Update sản phẩm</h1>
   <form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
-    <label
-      class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-    >
+    <div class="mb-4">
+      <label for="name" class="block text-gray-700 font-bold mb-2"
+        >Tên sản phẩm:</label
+      >
       <input
         type="text"
-        id="name"
+        name="name"
         formControlName="name"
-        placeholder="Name"
-        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+        class="w-full border border-gray-300 rounded focus:outline-none focus:border-indigo-500 shadow-sm px-4 py-2"
       />
-
-      <span
-        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
-      >
-        Name
-      </span>
-    </label>
-    <label
-      class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-    >
+    </div>
+    <div class="mb-4">
+      <label for="price" class="block text-gray-700 font-bold mb-2">Giá:</label>
       <input
         type="number"
-        id="price"
         formControlName="price"
-        placeholder="price"
-        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+        name="price"
+        class="w-full border border-gray-300 rounded focus:outline-none focus:border-indigo-500 shadow-sm px-4 py-2"
       />
-
-      <span
-        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
-      >
-        price
-      </span>
-    </label>
-    <label
-      class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-    >
-      <input
-        type="text"
-        id="description"
-        formControlName="description"
-        placeholder="description"
-        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-      />
-
-      <span
-        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
-      >
-        description
-      </span>
-    </label>
-    <label
-      class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-      ><br />
+    </div>
+    <div class="mb-4">
+      <label for="image" class="block text-gray-700 font-bold mb-2">Ảnh:</label>
       <input
         type="file"
+        name="image"
         (change)="onFileSelected($event)"
-        class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+        class="w-full border border-gray-300 rounded focus:outline-none focus:border-indigo-500 shadow-sm px-4 py-2"
       />
-
-      <span
-        class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs"
+    </div>
+    <div class="mb-4">
+      <label for="description" class="block text-gray-700 font-bold mb-2"
+        >Mô tả:</label
       >
-        image
-        <!-- (change)="onFileSelected($event)" -->
-      </span>
-    </label>
-    <label
-      class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600 pb-3"
-    >
-      <!-- <select *ngFor ="let cate of categories">
-        <option value="">Chọn</option>
-        <option value=" "></option>
-      </select> -->
-
-      Danh mục:
+      <textarea
+        name="description"
+        formControlName="description"
+        class="w-full border border-gray-300 rounded focus:outline-none focus:border-indigo-500 shadow-sm px-4 py-2"
+      ></textarea>
+    </div>
+    <div class="mb-4">
+      <label for="category" class="block text-gray-700 font-bold mb-2"
+        >Danh mục:</label
+      >
       <select
+        name="category"
         formControlName="categoryId"
         *ngIf="categories && categories.length"
+        class="w-full border border-gray-300 rounded focus:outline-none focus:border-indigo-500 shadow-sm px-4 py-2"
       >
         <option value="">Chọn</option>
         <option *ngFor="let cate of categories" value="{{ cate._id }}">
           {{ cate.name }}
         </option>
       </select>
-    </label>
-
-    <button
-      type="submit"
-      [disabled]="!productForm.valid"
-      class="group relative inline-block overflow-hidden border border-indigo-600 px-6 py-2 rounded mt-2 focus:outline-none focus:ring"
-    >
-      <span
-        class="absolute inset-y-0 left-0 w-[2px] bg-indigo-600 transition-all group-hover:w-full group-active:bg-indigo-500"
-      ></span>
-
-      <span
-        class="relative text-sm font-medium text-indigo-600 transition-colors group-hover:text-white"
+    </div>
+    <div class="flex justify-end">
+      <button
+        type="submit"
+        [disabled]="!productForm.valid"
+        class="bg-indigo-500 text-white px-4 py-2 rounded"
       >
-        Submit
-      </span>
-    </button>
+        Update
+      </button>
+    </div>
   </form>
 </div>
