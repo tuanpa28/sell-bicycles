@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class CategoryService {
   constructor(private http: HttpClient) {}
 
-  accessToken: string = JSON.parse(localStorage.getItem('accessToken') || '');
+  accessToken: string = "";
 
   optionHeader() {
     const headers = new HttpHeaders({

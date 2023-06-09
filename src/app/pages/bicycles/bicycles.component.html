@@ -1,5 +1,8 @@
 <!-- div2 -->
 
+
+<!-- div2 -->
+
 <div>
   <section class="bg-white">
     <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
@@ -17,208 +20,467 @@
 <!-- /div2 -->
 
 <!-- div3 -->
-
 <div>
-  <section class="bg-gray-100">
-    <div
-      class="mx-auto max-w-screen-xl flex justify-center px-4 py-8 sm:px-6 sm:py-12 lg:px-8"
-    >
-      <div class="mr-10">
-        <div class="relative">
-          <label class="sr-only" for="search"> Search </label>
+  <div
+    class="grid grid-cols-3 gap-4 items-center max-w-6xl mx-auto px-4 lg:px-6 ml-3"
+  >
+    <div class="relative h-12">
+      <select
+        class="block w-full h-full appearance-none bg-white border border-gray-400 hover:border-gray-500 rounded shadow leading-tight focus:outline-none focus:shadow-outline px-4 py-2 pr-8"
+      >
+        <option>Bicycles</option>
+        <option>Accessories</option>
+      </select>
 
-          <input
-            class="h-10 w-full rounded-full border-none bg-white pe-10 ps-4 text-sm shadow-sm sm:w-[400px]"
-            [(ngModel)]="searchText"
-            type="search"
-            placeholder="Search name..."
+      <div
+        class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+      >
+        <svg class="w-4 h-4 fill-current text-gray-500" viewBox="0 0 20 20">
+          <path d="M9 11a2 2 0 114 0 2 2 0 01-4 0z" />
+          <path
+            fill-rule="evenodd"
+            d="M17.707 16.293a1 1 0 01-1.414 1.414l-4.24-4.24a7 7 0 111.414-1.414l4.24 4.24z"
+            clip-rule="evenodd"
           />
-
-          <button
-            type="button"
-            (click)="searchProducts()"
-            class="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-gray-50 p-2 text-gray-600 transition hover:text-gray-700"
-          >
-            <span class="sr-only">Search</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div class="relative flex items-center">
-        <details class="group [&_summary::-webkit-details-marker]:hidden">
-          <summary
-            class="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600"
-          >
-            <span class="text-sm font-medium"> Search by price </span>
-
-            <span class="transition group-open:-rotate-180">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="h-4 w-4"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                />
-              </svg>
-            </span>
-          </summary>
-
-          <div
-            class="z-50 group-open:absolute group-open:start-0 group-open:top-auto group-open:mt-2"
-          >
-            <div class="w-96 rounded border border-gray-200 bg-white">
-              <header class="flex items-center justify-between p-4">
-                <button
-                  type="button"
-                  (click)="searchProducts()"
-                  class="text-sm text-gray-900 underline underline-offset-4"
-                >
-                  Search
-                </button>
-              </header>
-
-              <div class="border-t border-gray-200 p-4">
-                <div class="flex justify-between gap-4">
-                  <label for="FilterPriceFrom" class="flex items-center gap-2">
-                    <span class="text-sm text-gray-600">$</span>
-
-                    <input
-                      type="number"
-                      [(ngModel)]="minPrice"
-                      placeholder="From"
-                      class="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
-                    />
-                  </label>
-
-                  <label for="FilterPriceTo" class="flex items-center gap-2">
-                    <span class="text-sm text-gray-600">$</span>
-
-                    <input
-                      type="number"
-                      [(ngModel)]="maxPrice"
-                      placeholder="To"
-                      class="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
-                    />
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </details>
+        </svg>
       </div>
     </div>
-  </section>
+    <div class="relative h-12">
+      <input
+        type="text"
+        class="block w-full h-full bg-white border border-gray-400 hover:border-gray-500 rounded shadow leading-tight focus:outline-none focus:shadow-outline px-4 py-2 pr-8"
+        placeholder="Search..."
+      />
+      <div class="absolute inset-y-0 right-0 flex items-center px-2">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- /div3 -->
 
-<!-- div4 -->
-<div>
-  <section>
-    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-      <div class="mt-8">
-        <p class="text-sm text-gray-500">Showing <span> 4 </span> of 40</p>
+
+<!-- div5 -->
+
+<!--
+  Heads up! 👋
+
+  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
+
+  Plugins:
+    - @tailwindcss/forms
+-->
+
+<section>
+  <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <header>
+      <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">
+        Danh Sách Sản Phẩm
+      </h2>
+    </header>
+
+    <div class="mt-8 block lg:hidden">
+      <button
+        class="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600"
+      >
+        <span class="text-sm font-medium"> Filters & Sorting </span>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-4 w-4 rtl:rotate-180"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div class="mt-4 lg:mt-8 lg:grid lg:grid-cols-4 lg:items-start lg:gap-8">
+      <div class="hidden space-y-4 lg:block">
+        <div>
+          <label for="SortBy" class="block text-xs font-medium text-gray-700">
+            Sort By
+          </label>
+
+          <select id="SortBy" class="mt-1 rounded border-gray-300 text-sm">
+            <option>Sort By</option>
+            <option value="Title, DESC">Title, DESC</option>
+            <option value="Title, ASC">Title, ASC</option>
+            <option value="Price, DESC">Price, DESC</option>
+            <option value="Price, ASC">Price, ASC</option>
+          </select>
+        </div>
+
+        <div>
+          <p class="block text-xs font-medium text-gray-700">Filters</p>
+
+          <div class="mt-1 space-y-2">
+            <details
+              class="overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden"
+            >
+              <summary
+                class="flex cursor-pointer items-center justify-between gap-2 p-4 text-gray-900 transition"
+              >
+                <span class="text-sm font-medium"> Availability </span>
+
+                <span class="transition group-open:-rotate-180">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-4 w-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </span>
+              </summary>
+
+              <div class="border-t border-gray-200 bg-white">
+                <header class="flex items-center justify-between p-4">
+                  <span class="text-sm text-gray-700"> 0 Selected </span>
+
+                  <button
+                    type="button"
+                    class="text-sm text-gray-900 underline underline-offset-4"
+                  >
+                    Reset
+                  </button>
+                </header>
+
+                <ul class="space-y-1 border-t border-gray-200 p-4">
+                  <li>
+                    <label
+                      for="FilterInStock"
+                      class="inline-flex items-center gap-2"
+                    >
+                      <input
+                        type="checkbox"
+                        id="FilterInStock"
+                        class="h-5 w-5 rounded border-gray-300"
+                      />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        In Stock (5+)
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label
+                      for="FilterPreOrder"
+                      class="inline-flex items-center gap-2"
+                    >
+                      <input
+                        type="checkbox"
+                        id="FilterPreOrder"
+                        class="h-5 w-5 rounded border-gray-300"
+                      />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Pre Order (3+)
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label
+                      for="FilterOutOfStock"
+                      class="inline-flex items-center gap-2"
+                    >
+                      <input
+                        type="checkbox"
+                        id="FilterOutOfStock"
+                        class="h-5 w-5 rounded border-gray-300"
+                      />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Out of Stock (10+)
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <details
+              class="overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden"
+            >
+              <summary
+                class="flex cursor-pointer items-center justify-between gap-2 p-4 text-gray-900 transition"
+              >
+                <span class="text-sm font-medium"> Price </span>
+
+                <span class="transition group-open:-rotate-180">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-4 w-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </span>
+              </summary>
+
+              <div class="border-t border-gray-200 bg-white">
+                <header class="flex items-center justify-between p-4">
+                  <span class="text-sm text-gray-700">
+                    The highest price is $600
+                  </span>
+
+                  <button
+                    type="button"
+                    class="text-sm text-gray-900 underline underline-offset-4"
+                  >
+                    Reset
+                  </button>
+                </header>
+
+                <div class="border-t border-gray-200 p-4">
+                  <div class="flex justify-between gap-4">
+                    <label
+                      for="FilterPriceFrom"
+                      class="flex items-center gap-2"
+                    >
+                      <span class="text-sm text-gray-600">$</span>
+
+                      <input
+                        type="number"
+                        id="FilterPriceFrom"
+                        placeholder="From"
+                        class="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                      />
+                    </label>
+
+                    <label for="FilterPriceTo" class="flex items-center gap-2">
+                      <span class="text-sm text-gray-600">$</span>
+
+                      <input
+                        type="number"
+                        id="FilterPriceTo"
+                        placeholder="To"
+                        class="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                      />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details
+              class="overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden"
+            >
+              <summary
+                class="flex cursor-pointer items-center justify-between gap-2 p-4 text-gray-900 transition"
+              >
+                <span class="text-sm font-medium"> Colors </span>
+
+                <span class="transition group-open:-rotate-180">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-4 w-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </span>
+              </summary>
+
+              <div class="border-t border-gray-200 bg-white">
+                <header class="flex items-center justify-between p-4">
+                  <span class="text-sm text-gray-700"> 0 Selected </span>
+
+                  <button
+                    type="button"
+                    class="text-sm text-gray-900 underline underline-offset-4"
+                  >
+                    Reset
+                  </button>
+                </header>
+
+                <ul class="space-y-1 border-t border-gray-200 p-4">
+                  <li>
+                    <label
+                      for="FilterRed"
+                      class="inline-flex items-center gap-2"
+                    >
+                      <input
+                        type="checkbox"
+                        id="FilterRed"
+                        class="h-5 w-5 rounded border-gray-300"
+                      />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Red
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label
+                      for="FilterBlue"
+                      class="inline-flex items-center gap-2"
+                    >
+                      <input
+                        type="checkbox"
+                        id="FilterBlue"
+                        class="h-5 w-5 rounded border-gray-300"
+                      />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Blue
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label
+                      for="FilterGreen"
+                      class="inline-flex items-center gap-2"
+                    >
+                      <input
+                        type="checkbox"
+                        id="FilterGreen"
+                        class="h-5 w-5 rounded border-gray-300"
+                      />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Green
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label
+                      for="FilterOrange"
+                      class="inline-flex items-center gap-2"
+                    >
+                      <input
+                        type="checkbox"
+                        id="FilterOrange"
+                        class="h-5 w-5 rounded border-gray-300"
+                      />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Orange
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label
+                      for="FilterPurple"
+                      class="inline-flex items-center gap-2"
+                    >
+                      <input
+                        type="checkbox"
+                        id="FilterPurple"
+                        class="h-5 w-5 rounded border-gray-300"
+                      />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Purple
+                      </span>
+                    </label>
+                  </li>
+
+                  <li>
+                    <label
+                      for="FilterTeal"
+                      class="inline-flex items-center gap-2"
+                    >
+                      <input
+                        type="checkbox"
+                        id="FilterTeal"
+                        class="h-5 w-5 rounded border-gray-300"
+                      />
+
+                      <span class="text-sm font-medium text-gray-700">
+                        Teal
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
       </div>
 
-      <ul class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <li *ngFor="let pro of products; index as i">
-          <a href="bicyclesfake1" class="group block overflow-hidden">
-            <img
-              src="{{ pro.image.url }}"
-              alt=""
-              class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-            />
-
-            <div class="relative bg-white pt-3">
-              <h1 routerLink="bicyclesfake1">
-                {{ pro.name }}
-              </h1>
-              <h3
-                class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
-              >
-                {{ pro.description }}
-              </h3>
-
-              <p class="mt-2">
-                <span class="sr-only"> Regular Price </span>
-
-                <span class="tracking-wider text-gray-900">
-                  {{ pro.price }}
-                </span>
-              </p>
-            </div>
-          </a>
-        </li>
-      </ul>
-
-      <ol class="mt-8 flex justify-center gap-1 text-xs font-medium">
-        <li>
-          <a
-            href="#"
-            class="inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100"
-          >
-            <span class="sr-only">Prev Page</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-3 w-3"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+      <div class="lg:col-span-3">
+        <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <li *ngFor="let pro of products; index as i">
+            <a
+              [routerLink]="['/bicyclesfake1/', pro._id]"
+              class="group block overflow-hidden"
             >
-              <path
-                fill-rule="evenodd"
-                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                clip-rule="evenodd"
+              <img
+                src="{{ pro.image.url }}"
+                alt=""
+                class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
               />
-            </svg>
-          </a>
-        </li>
 
-        <li>
-          <a
-            href="#"
-            class="inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100"
-          >
-            <span class="sr-only">Next Page</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-3 w-3"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </a>
-        </li>
-      </ol>
+              <div class="relative bg-white pt-3">
+                <h3
+                  class="text-xs font-bold text-gray-700 group-hover:underline group-hover:underline-offset-4"
+                >
+                  {{ pro.name }}
+                </h3>
+
+                <h3
+                  class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
+                >
+                  {{ pro.description }}
+                </h3>
+
+                <p class="mt-2">
+                  <span class="sr-only"> Regular Price </span>
+
+                  <span class="tracking-wider text-gray-900">
+                    {{ pro.price }}
+                  </span>
+                </p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 
-<!-- /div4 -->
+<!-- /div5 -->
 
 <!-- div5 -->
 <div>

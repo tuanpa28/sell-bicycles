@@ -1,13 +1,33 @@
 
+<!-- div1 -->
+
+<div>
+
+  <section class="bg-gray-300">
+
+      <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="text-3xl font-bold text-gray-900 sm:text-6xl italic">
+            New Arivales
+          </h2>
+        </div>
+
+      </div>
+    </section>
+</div>
+
+<!-- /div1 -->
 
  <!-- div2 -->
-     <div>
+  <div>
 
   <section
   class="relative bg-[url(https://res.cloudinary.com/db5szckya/image/upload/v1685617962/xedap1_oyqxwb.jpg)] bg-cover bg-center bg-no-repeat"
   >
 
+    <div >
 
+    </div>
 
   <div
   class="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
@@ -75,8 +95,8 @@
      <section class="bg-white">
          <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
            <div class="mx-auto max-w-3xl text-center">
-             <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl italic">
-               New Arivales
+             <h2 class="text-5xl font-bold text-gray-900 sm:text-4xl italic text-red-700">
+              Danh Sách Sản Phẩm
              </h2>
            </div>
 
@@ -101,8 +121,16 @@
 
 
     <div class="mt-8">
-      <p class="text-sm text-gray-500">Showing <span> 4 </span> of 40</p>
+      <p class="text-sm text-gray-500 font-bold pb-2"> * Sản Phẩm <span> Mới </span> Nhất</p>
     </div>
+
+    <div class="relative">
+      <input type="text" class="w-80 px-3 py-2 rounded-md bg-gray-300 border-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50" placeholder="Tìm kiếm sản phẩm" />
+      <button class="absolute top-0 p-2 rounded-md bg-blue-500 hover:bg-blue-700 text-white font-bold">
+        Tìm kiếm
+      </button>
+    </div>
+
 
     <ul  class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" >
       <li *ngFor = " let pro of products ;index as i">
