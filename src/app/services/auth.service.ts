@@ -15,4 +15,8 @@ export class AuthService {
   signin(user: any): Observable<any> {
     return this.http.post('https://asmbe.vercel.app/api/signin', user);
   }
+
+  isAuthenticated() {
+    return JSON.parse(localStorage.getItem('user') || '{}');
+  }
 }
