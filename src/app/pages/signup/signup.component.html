@@ -36,6 +36,7 @@
           </span>
         </div>
         <div
+          class="text-[red]"
           *ngIf="
             formSignup.get('name')?.hasError('required') &&
             (formSignup.get('name')?.touched || formSignup.get('name')?.dirty)
@@ -73,6 +74,7 @@
           </span>
         </div>
         <div
+          class="text-[red]"
           *ngIf="
             formSignup.get('email')?.hasError('required') &&
             (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)
@@ -81,6 +83,7 @@
           Email is required
         </div>
         <div
+          class="text-[red]"
           *ngIf="
             formSignup.get('email')?.hasError('email') &&
             (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)
@@ -125,6 +128,7 @@
           </span>
         </div>
         <div
+          class="text-[red]"
           *ngIf="
             formSignup.get('password')?.hasError('required') &&
             (formSignup.get('password')?.touched ||
@@ -134,6 +138,7 @@
           Password is required
         </div>
         <div
+          class="text-[red]"
           *ngIf="
             formSignup.get('password')?.hasError('minlength') &&
             (formSignup.get('password')?.touched ||
@@ -179,8 +184,9 @@
           </span>
         </div>
         <div
+          class="text-[red]"
           *ngIf="
-            formSignup.get('confirmPassword')?.hasError('required') &&
+            formSignup?.hasError('notMatch') &&
             (formSignup.get('confirmPassword')?.touched ||
               formSignup.get('confirmPassword')?.dirty)
           "

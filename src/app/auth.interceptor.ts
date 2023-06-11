@@ -15,11 +15,12 @@ export class AuthInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    const accessToken = JSON.parse(localStorage.getItem('accessToken') || '');
-    if (accessToken === '') return next.handle(request);
+    const accessToken = localStorage.getItem('accessToken');
+    const parsedAccessToken = accessToken ? JSON.parse(accessToken) : null;
+    if (parsedAccessToken === null) return next.handle(request);
     const modifyRequest = request.clone({
       setHeaders: {
-        Authorization: `Bearer ${accessToken}`,
+        Authorization: `Bearer ${parsedAccessToken}`,
       },
     });
     return next.handle(modifyRequest);

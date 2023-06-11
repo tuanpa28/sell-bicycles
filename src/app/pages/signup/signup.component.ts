@@ -17,7 +17,7 @@ export class SignupComponent {
       confirmPassword: ['', [Validators.required]],
     },
     {
-      Validators: this.checkPassword,
+      validators: this.checkPassword,
     }
   );
 
