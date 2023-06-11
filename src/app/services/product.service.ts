@@ -15,7 +15,7 @@ export class ProductService {
     });
   }
   getProducts(): Observable<any> {
-    return this.http.get<IProduct[]>('https://asmbe.vercel.app/api/products');
+    return this.http.get<IProduct[]>('https://asmbe.vercel.app/api/products?_expand=category');
   }
   getProductById(id: string): Observable<any> {
     return this.http.get<IProduct>(

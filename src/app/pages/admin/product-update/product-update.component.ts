@@ -51,25 +51,29 @@ export class ProductUpdateComponent {
   }
   onHandleSubmit() {
     if (this.productForm.invalid) return;
+    let imageUrl = {};
     if (this.selectedFile) {
       this.uploadImageService
         .uploadImage(this.selectedFile)
         .subscribe((response: any) => {
-          const imageUrl = response.urls[0];
-          const product: any = {
-            _id: this.id,
-            name: this.productForm.value.name || '',
-            price: this.productForm.value.price || 0,
-            description: this.productForm.value.description || '',
-            image: imageUrl || {},
-            categoryId: this.productForm.value.categoryId || '',
-          };
-
-          this.productService.updateProduct(product).subscribe(() => {
-            this.router.navigate(['/admin/products']);
-            alert('Sửa sản phẩm thành công!');
-          });
+          imageUrl = response.urls[0];
         });
+    } else {
+      imageUrl = this.productForm.value.image || {};
     }
+
+    const product: any = {
+      _id: this.id,
+      name: this.productForm.value.name || '',
+      price: this.productForm.value.price || 0,
+      description: this.productForm.value.description || '',
+      image: imageUrl || {},
+      categoryId: this.productForm.value.categoryId || '',
+    };
+
+    this.productService.updateProduct(product).subscribe(() => {
+      this.router.navigate(['/admin/products']);
+      alert('Sửa sản phẩm thành công!');
+    });
   }
 }

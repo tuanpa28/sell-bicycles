@@ -35,7 +35,7 @@
             </svg>
           </span>
         </div>
-        <div
+        <div class="text-[red]"
           *ngIf="
             formSignin.get('email')?.hasError('required') &&
             (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)
@@ -43,7 +43,7 @@
         >
           Email is required
         </div>
-        <div
+        <div class="text-[red]"
           *ngIf="
             formSignin.get('email')?.hasError('email') &&
             (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)
@@ -87,7 +87,7 @@
             </svg>
           </span>
         </div>
-        <div
+        <div class="text-[red]"
           *ngIf="
             formSignin.get('password')?.hasError('required') &&
             (formSignin.get('password')?.touched ||
@@ -96,7 +96,7 @@
         >
           Password is required
         </div>
-        <div
+        <div class="text-[red]"
           *ngIf="
             formSignin.get('password')?.hasError('minlength') &&
             (formSignin.get('password')?.touched ||

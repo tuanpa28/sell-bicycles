@@ -60,7 +60,7 @@
       </li>
     </ol>
   </nav>
-  <div class="flex items-center mb-4 my-4">
+  <!-- <div class="flex items-center mb-4 my-4">
     <input
       type="text"
       placeholder="Search..."
@@ -69,8 +69,8 @@
     <button type="button" class="bg-indigo-500 text-white px-4 py-2 rounded-r">
       Search
     </button>
-  </div>
-  <div class="overflow-x-auto w-[1000px]">
+  </div> -->
+  <div class="overflow-x-auto w-[1000px] mt-10">
     <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
       <thead class="ltr:text-left rtl:text-right">
         <tr>
@@ -105,22 +105,23 @@
             {{ i + 1 }}
           </td>
           <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-            {{ product.name }}
+            {{ product?.name }}
           </td>
           <td class="whitespace-nowrap px-4 py-2 text-gray-700">
             <img
+            width="100px"
               [src]="getProductImageUrl(product.image)"
               alt="Product Image"
             />
           </td>
           <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-            {{ product.price }}
+            {{ product?.price }}
           </td>
           <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-            {{ product.description }}
+            {{ product?.description }}
           </td>
           <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-            {{ product.categoryId }}
+            {{ product?.categoryId?.name || "UnCategory" }}
           </td>
 
           <td class="whitespace-nowrap px-4 py-2 text-gray-700">
