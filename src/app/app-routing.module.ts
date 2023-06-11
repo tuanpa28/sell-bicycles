@@ -20,6 +20,7 @@ import { AccessoriesComponent } from './pages/accessories/accessories.component'
 import { Accessoriesfake2Component } from './pages/accessoriesfake2/accessoriesfake2.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -42,6 +43,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminLayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardPageComponent },
