@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,8 +25,32 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { Bicyclesfake1Component } from './pages/bicyclesfake1/bicyclesfake1.component';
 import { Accessoriesfake2Component } from './pages/accessoriesfake2/accessoriesfake2.component';
+import { AuthInterceptor } from './auth.interceptor';
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent, DashboardPageComponent, CategoriesPageComponent, CategoryAddComponent, CategoryUpdateComponent, CategoryListComponent, AdminLayoutComponent, BaseLayoutComponent, SignupComponent, SigninComponent, ProductListComponent, ProductsPageComponent, ProductAddComponent, ProductUpdateComponent,HomepageComponent, BicyclesComponent, AccessoriesComponent, AboutComponent, ContactComponent, Bicyclesfake1Component, Accessoriesfake2Component],
+  declarations: [
+    AppComponent,
+    PageNotFoundComponent,
+    DashboardPageComponent,
+    CategoriesPageComponent,
+    CategoryAddComponent,
+    CategoryUpdateComponent,
+    CategoryListComponent,
+    AdminLayoutComponent,
+    BaseLayoutComponent,
+    SignupComponent,
+    SigninComponent,
+    ProductListComponent,
+    ProductsPageComponent,
+    ProductAddComponent,
+    ProductUpdateComponent,
+    HomepageComponent,
+    BicyclesComponent,
+    AccessoriesComponent,
+    AboutComponent,
+    ContactComponent,
+    Bicyclesfake1Component,
+    Accessoriesfake2Component,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,7 +58,9 @@ import { Accessoriesfake2Component } from './pages/accessoriesfake2/accessoriesf
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

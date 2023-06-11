@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from '../interfaces/product';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,16 +8,6 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
   constructor(private http: HttpClient) {}
-
-  accessToken: string = "";
-
-  optionHeader() {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.accessToken}`,
-    });
-    return headers;
-  }
 
   searchProducts(queryObject: any): Observable<any> {
     return this.http.get<IProduct[]>('https://asmbe.vercel.app/api/products', {
@@ -33,28 +23,20 @@ export class ProductService {
     );
   }
   createProduct(product: IProduct): Observable<any> {
-    const headers = this.optionHeader();
-
     return this.http.post<IProduct>(
       'https://asmbe.vercel.app/api/products',
-      product,
-      { headers }
+      product
     );
   }
   updateProduct(product: IProduct): Observable<any> {
-    const headers = this.optionHeader();
-
     return this.http.put<IProduct>(
       `https://asmbe.vercel.app/api/products/${product._id}`,
-      product,
-      { headers }
+      product
     );
   }
   removeProduct(id: string): Observable<any> {
-    const headers = this.optionHeader();
     return this.http.delete<IProduct>(
-      `https://asmbe.vercel.app/api/products/${id}`,
-      { headers }
+      `https://asmbe.vercel.app/api/products/${id}`
     );
   }
 }
