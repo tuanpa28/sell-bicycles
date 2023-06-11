@@ -9,16 +9,6 @@ import { Observable } from 'rxjs';
 export class CategoryService {
   constructor(private http: HttpClient) {}
 
-  accessToken: string = "";
-
-  optionHeader() {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.accessToken}`,
-    });
-    return headers;
-  }
-
   getCategories(): Observable<any> {
     return this.http.get<ICategory[]>(
       'https://asmbe.vercel.app/api/categories'
@@ -32,28 +22,22 @@ export class CategoryService {
   }
 
   createCategory(category: ICategory): Observable<ICategory> {
-    const headers = this.optionHeader();
     return this.http.post<ICategory>(
       'https://asmbe.vercel.app/api/categories',
-      category,
-      { headers }
+      category
     );
   }
 
   updateCategory(category: ICategory): Observable<ICategory> {
-    const headers = this.optionHeader();
     return this.http.put<ICategory>(
       `https://asmbe.vercel.app/api/categories/${category._id}`,
-      category,
-      { headers }
+      category
     );
   }
 
   deleteCategory(id: string): Observable<ICategory> {
-    const headers = this.optionHeader();
     return this.http.delete<ICategory>(
-      `https://asmbe.vercel.app/api/categories/${id}`,
-      { headers }
+      `https://asmbe.vercel.app/api/categories/${id}`
     );
   }
 }
