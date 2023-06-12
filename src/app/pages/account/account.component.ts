@@ -8,10 +8,10 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class AccountComponent implements OnInit {
   user: any;
-  constructor(private router: Router, private userService: UserService,) { }
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit() {
-    const getUser = JSON.parse(localStorage.getItem('user') || '');
+    const getUser = JSON.parse(localStorage.getItem('user') || '{}');
     if (!getUser) {
       this.router.navigate(['/detail'])
       return;

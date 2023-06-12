@@ -8,15 +8,6 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
     constructor(private http: HttpClient) { }
-    accessToken: string = "";
-
-    optionHeader() {
-        const headers = new HttpHeaders({
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${this.accessToken}`,
-        });
-        return headers;
-    }
 
     getUserProfile(): Observable<any> {
         return this.http.get<any>(
@@ -24,7 +15,7 @@ export class UserService {
         );
     }
 
-    updateUserById(data: any): Observable<any> {
+    updateUser(data: { name: string, email: string }): Observable<any> {
         return this.http.put<any>(
             `https://asmbe.vercel.app/api/user/update`, data
         );

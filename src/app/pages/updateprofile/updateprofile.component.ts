@@ -13,19 +13,18 @@ import {
   styleUrls: ['./updateprofile.component.css']
 })
 export class UpdateprofileComponent implements OnInit {
-  user: any;
+
   constructor(private router: Router, private userService: UserService, private formBuilder: FormBuilder,) {
 
   }
-  submitted: boolean = false;
-  formData: any
+
   formUpdateProfile: any
   ngOnInit() {
     this.formUpdateProfile = new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl("", Validators.required),
     });
-    const getUser = JSON.parse(localStorage.getItem('user') || '');
+    const getUser = JSON.parse(localStorage.getItem('user') || '{}');
 
     if (!getUser) {
       this.router.navigate(['/detail'])
@@ -33,20 +32,20 @@ export class UpdateprofileComponent implements OnInit {
     }
 
     this.userService.getUserProfile().subscribe((res) => {
-      this.user = res.user
+
       this.formUpdateProfile = new FormGroup({
         name: new FormControl(res.user.name, Validators.required),
         email: new FormControl(res.user.email, Validators.required),
 
       });
     })
-    console.log(this.user)
 
 
   }
   onHandleSubmit() {
-    this.submitted = true;
-    this.userService.updateUserById(this.formUpdateProfile.value).subscribe(
+    console.log(this.formUpdateProfile.value);
+
+    this.userService.updateUser(this.formUpdateProfile.value).subscribe(
       (res) => {
         this.router.navigate(['/account']);
       },
