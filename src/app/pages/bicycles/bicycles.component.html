@@ -236,7 +236,7 @@
                   <span class="sr-only"> Regular Price </span>
 
                   <span class="tracking-wider text-gray-900">
-                    {{ pro.price }} vnđ
+                    {{ pro.price | currency : "VND" : "symbol" : "1.0-0" }}
                   </span>
                 </p>
               </div>

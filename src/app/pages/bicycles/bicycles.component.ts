@@ -3,6 +3,8 @@ import { IProduct } from 'src/app/interfaces/product';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { CurrencyPipe } from '@angular/common';
+
 @Component({
   selector: 'app-bicycles',
   templateUrl: './bicycles.component.html',
