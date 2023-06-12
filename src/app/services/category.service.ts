@@ -10,9 +10,7 @@ export class CategoryService {
   constructor(private http: HttpClient) {}
 
   getCategories(): Observable<any> {
-    return this.http.get<ICategory[]>(
-      'http://localhost:8081/api/categories'
-    );
+    return this.http.get<ICategory[]>('http://localhost:8081/api/categories');
   }
 
   getCategoryById(id: string): Observable<any> {
@@ -38,6 +36,11 @@ export class CategoryService {
   deleteCategory(id: string): Observable<ICategory> {
     return this.http.delete<ICategory>(
       `http://localhost:8081/api/categories/${id}`
+    );
+  }
+  getProductsByCategory(categoryId: string): Observable<any> {
+    return this.http.get<ICategory>(
+      `http://localhost:8081/api/categories/${categoryId}?_embed=products`
     );
   }
 }
