@@ -11,33 +11,33 @@ export class CategoryService {
 
   getCategories(): Observable<any> {
     return this.http.get<ICategory[]>(
-      'https://asmbe.vercel.app/api/categories'
+      'http://localhost:8081/api/categories'
     );
   }
 
   getCategoryById(id: string): Observable<any> {
     return this.http.get<ICategory>(
-      `https://asmbe.vercel.app/api/categories/${id}`
+      `http://localhost:8081/api/categories/${id}`
     );
   }
 
   createCategory(category: ICategory): Observable<ICategory> {
     return this.http.post<ICategory>(
-      'https://asmbe.vercel.app/api/categories',
+      'http://localhost:8081/api/categories',
       category
     );
   }
 
   updateCategory(category: ICategory): Observable<ICategory> {
     return this.http.put<ICategory>(
-      `https://asmbe.vercel.app/api/categories/${category._id}`,
+      `http://localhost:8081/api/categories/${category._id}`,
       category
     );
   }
 
   deleteCategory(id: string): Observable<ICategory> {
     return this.http.delete<ICategory>(
-      `https://asmbe.vercel.app/api/categories/${id}`
+      `http://localhost:8081/api/categories/${id}`
     );
   }
 }

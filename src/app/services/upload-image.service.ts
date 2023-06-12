@@ -12,7 +12,7 @@ export class UploadImageService {
     formData.append('image', imageFile);
 
     return this.http.post(
-      'https://asmbe.vercel.app/api/images/upload',
+      'http://localhost:8081/api/images/upload',
       formData
     );
   }
