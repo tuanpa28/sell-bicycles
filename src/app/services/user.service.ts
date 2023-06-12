@@ -11,13 +11,13 @@ export class UserService {
 
     getUserProfile(): Observable<any> {
         return this.http.get<any>(
-            `https://asmbe.vercel.app/api/user/profile`
+            `http://localhost:8081/api/user/profile`
         );
     }
 
     updateUser(data: { name: string, email: string }): Observable<any> {
         return this.http.put<any>(
-            `https://asmbe.vercel.app/api/user/update`, data
+            `http://localhost:8081/api/user/update`, data
         );
     }
 }

@@ -9,11 +9,11 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   signup(user: any): Observable<any> {
-    return this.http.post('https://asmbe.vercel.app/api/signup', user);
+    return this.http.post('http://localhost:8081/api/signup', user);
   }
 
   signin(user: any): Observable<any> {
-    return this.http.post('https://asmbe.vercel.app/api/signin', user);
+    return this.http.post('http://localhost:8081/api/signin', user);
   }
 
   isAuthenticated() {

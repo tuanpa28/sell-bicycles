@@ -10,33 +10,33 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   searchProducts(queryObject: any): Observable<any> {
-    return this.http.get<IProduct[]>('https://asmbe.vercel.app/api/products', {
+    return this.http.get<IProduct[]>('http://localhost:8081/api/products', {
       params: queryObject,
     });
   }
   getProducts(): Observable<any> {
-    return this.http.get<IProduct[]>('https://asmbe.vercel.app/api/products?_expand=category');
+    return this.http.get<IProduct[]>('http://localhost:8081/api/products?_expand=category');
   }
   getProductById(id: string): Observable<any> {
     return this.http.get<IProduct>(
-      `https://asmbe.vercel.app/api/products/${id}`
+      `http://localhost:8081/api/products/${id}`
     );
   }
   createProduct(product: IProduct): Observable<any> {
     return this.http.post<IProduct>(
-      'https://asmbe.vercel.app/api/products',
+      'http://localhost:8081/api/products',
       product
     );
   }
   updateProduct(product: IProduct): Observable<any> {
     return this.http.put<IProduct>(
-      `https://asmbe.vercel.app/api/products/${product._id}`,
+      `http://localhost:8081/api/products/${product._id}`,
       product
     );
   }
   removeProduct(id: string): Observable<any> {
     return this.http.delete<IProduct>(
-      `https://asmbe.vercel.app/api/products/${id}`
+      `http://localhost:8081/api/products/${id}`
     );
   }
 }

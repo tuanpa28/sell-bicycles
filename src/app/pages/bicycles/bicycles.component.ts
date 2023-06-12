@@ -30,6 +30,8 @@ export class BicyclesComponent {
       const searchKeyword = params['_searchText'];
       const minPrice = params['_minPrice'];
       const maxPrice = params['_maxPrice'];
+      const sort = params['_sort'];
+      const order = params['_order'];
       const queryObject: Record<string, any> = {};
       if (searchKeyword) {
         queryObject['_searchText'] = searchKeyword;
@@ -37,6 +39,12 @@ export class BicyclesComponent {
       if (minPrice && maxPrice) {
         queryObject['_minPrice'] = minPrice;
         queryObject['_maxPrice'] = maxPrice;
+      }
+      if (sort) {
+        queryObject['_sort'] = sort;
+      }
+      if (order) {
+        queryObject['_order'] = order;
       }
 
       this.productService
@@ -47,7 +55,7 @@ export class BicyclesComponent {
     });
   }
 
-  searchProducts() {
+  searchProducts(event?: any) {
     const queryParams: Record<string, any> = {};
     if (this.searchText) {
       queryParams['_searchText'] = this.searchText;
@@ -56,7 +64,14 @@ export class BicyclesComponent {
       queryParams['_minPrice'] = this.minPrice;
       queryParams['_maxPrice'] = this.maxPrice;
     }
-    if (this.searchText || (this.minPrice >= 0 && this.maxPrice > 0)) {
+    if (event) {
+      const selectedValue = event.target.value;
+      const [field, order] = selectedValue.split(', ');
+      queryParams['_sort'] = field;
+      queryParams['_order'] = order;
+    }
+
+    if (this.searchText || (this.minPrice >= 0 && this.maxPrice > 0) || event) {
       this.router.navigate([window.location.pathname], { queryParams });
     }
   }
