@@ -21,7 +21,8 @@ import { Accessoriesfake2Component } from './pages/accessoriesfake2/accessoriesf
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AuthGuard } from './auth.guard';
-
+import { AccountComponent } from './pages/account/account.component';
+import { UpdateprofileComponent } from './pages/updateprofile/updateprofile.component';
 const routes: Routes = [
   {
     path: '',
@@ -29,6 +30,9 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'homepage', pathMatch: 'full' },
       { path: 'homepage', component: HomepageComponent },
+      { path: 'account', component: AccountComponent },
+      { path: 'account/:id', component: UpdateprofileComponent },
+
       { path: 'bicycles', component: BicyclesComponent },
       { path: 'bicyclesfake1/:id', component: Bicyclesfake1Component },
       { path: 'contact', component: ContactComponent },
@@ -63,4 +67,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
