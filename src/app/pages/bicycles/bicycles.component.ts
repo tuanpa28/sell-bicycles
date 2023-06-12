@@ -24,15 +24,11 @@ export class BicyclesComponent {
       (error) => console.log(error)
     );
 
-    this.productService.getProductByCategory().subscribe((data) =>  {
+    this.productService.getProductByCategory().subscribe((data) => {
       if (data != null) {
-        console.log(data);
-
-    return this.products =  data;
-
+        return (this.products = data);
       }
-    }
-    )
+    });
   }
 
   ngOnInit() {
@@ -57,11 +53,11 @@ export class BicyclesComponent {
         queryObject['_order'] = order;
       }
 
-      // this.productService
-      //   .searchProducts(queryObject)
-      //   .subscribe(({ products }) => {
-      //     this.products = products.data;
-      //   });
+      this.productService
+        .searchProducts(queryObject)
+        .subscribe(({ products }) => {
+          this.products = products.data;
+        });
     });
   }
 
