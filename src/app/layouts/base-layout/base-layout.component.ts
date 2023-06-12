@@ -8,13 +8,14 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./base-layout.component.scss'],
 })
 export class BaseLayoutComponent {
+
   isShow = false;
   category: ICategory[] = [];
   constructor(private categoryService: CategoryService) {
-      this.categoryService.getCategories().subscribe((data) => {
+    this.categoryService.getCategories().subscribe((data) => {
 
-        this.category = data.categories.data;
-     });
+      this.category = data.categories.data;
+    });
   }
 
   handleShow() {

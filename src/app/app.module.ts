@@ -26,6 +26,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { Bicyclesfake1Component } from './pages/bicyclesfake1/bicyclesfake1.component';
 import { Accessoriesfake2Component } from './pages/accessoriesfake2/accessoriesfake2.component';
 import { AuthInterceptor } from './auth.interceptor';
+import { UpdateprofileComponent } from './pages/updateprofile/updateprofile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +52,7 @@ import { AuthInterceptor } from './auth.interceptor';
     ContactComponent,
     Bicyclesfake1Component,
     Accessoriesfake2Component,
+    UpdateprofileComponent
   ],
   imports: [
     BrowserModule,
@@ -63,4 +66,4 @@ import { AuthInterceptor } from './auth.interceptor';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
