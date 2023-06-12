@@ -159,11 +159,7 @@
                         />
                       </svg>
 
-                      <a
-                        class="uppercase font-bold hover:text-red-700 py-2 px-4 m-1.9"
-                        routerLink="bicycles"
-                        >{{ item.name }}</a
-                      >
+                      <a (click)="onGetCategory(item._id)" class="uppercase font-bold hover:text-red-700 py-2 px-4 m-1.9"  routerLink="bicycles">{{item.name}}</a>
                     </li>
                   </ul>
                 </div>

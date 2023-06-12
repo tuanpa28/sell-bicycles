@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from '../interfaces/product';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable,BehaviorSubject } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root',
@@ -38,5 +40,18 @@ export class ProductService {
     return this.http.delete<IProduct>(
       `http://localhost:8081/api/products/${id}`
     );
+  }
+
+  private productByCategory = new BehaviorSubject<any>(null);
+
+  getProductByCategory (): Observable<any> {
+    return this.productByCategory.asObservable();
+
+  }
+
+
+
+  setProductByCategory (products:any) {
+    this.productByCategory.next(products);
   }
 }

@@ -43,4 +43,8 @@ export class CategoryService {
       `http://localhost:8081/api/categories/${categoryId}?_embed=products`
     );
   }
+
+  getProductByCategory (id: string): Observable<any> {
+    return this.http.get<any>("http://localhost:8081/api/categories/"+id+"?_embed=products")
+  }
 }
